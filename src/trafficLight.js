@@ -1,7 +1,7 @@
 import React, {
   Component
 } from 'react';
-import './App.css';
+import './trafficLight.css';
 
 var trafficStyle = {
   red: {
@@ -18,7 +18,7 @@ var trafficStyle = {
   }
 };
 
-class App extends Component {
+class Lights extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,7 +41,7 @@ class App extends Component {
     clearInterval(this._timeout);
   }
   changeHandle() {
-    console.log('call handle');
+
     switch (this.state.next) {
       case "red":
         this.setState({
@@ -58,7 +58,7 @@ class App extends Component {
           yellow: trafficStyle.yellow,
           green: trafficStyle.black,
           interval: 30000,
-          next: this.state.green == trafficStyle.green ? "red" : "green"
+          next: this.state.green === trafficStyle.green ? "red" : "green"
         });
         break;
       case "green":
@@ -69,6 +69,8 @@ class App extends Component {
           interval: 300000,
           next: "yellow"
         });
+        break;
+      default:
         break;
     }
 
@@ -83,10 +85,10 @@ class App extends Component {
               <div className="circle" style={this.state.red}></div>
               <div className="circle" style={this.state.yellow}></div>
               <div className="circle" style={this.state.green}></div>
-          </div>
+      </div>
 
     );
   }
 }
 
-export default App;
+export default Lights;

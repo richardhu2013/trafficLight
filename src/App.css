@@ -1,0 +1,11 @@
+.box {
+  height:100vh;
+  padding-top: 0px;
+  width: 350px;
+  margin-left:auto;
+  margin-right:auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+ }
